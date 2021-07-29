@@ -3,7 +3,7 @@ exports.addMovie = async (req, res) => {
 try {
     const movie= new Movie(req.body);
     const savedMovie = await movie.save();
-    res.status(200).send ({movie:saveMovied, message: "Movie added to database" });
+    res.status(200).send ({movie: saveMovie, message: "Movie added to database" });
 } catch (error) {
     res.status(500).send (error)
 }
@@ -31,7 +31,7 @@ exports.deleteMovie = async (req, res) => {
         }
 };
 
-exports.movieUser = async (req, res) => {
+exports.updateMovie = async (req, res) => {
     try {
         const movie = req.body.title;
         const watched= req.body.watched;
